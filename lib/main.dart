@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tools/screens/main_screen.dart';
 import 'package:tools/screens/userAuth/confirm_account.dart';
 import 'package:tools/screens/userAuth/confirm_success.dart';
 import 'package:tools/screens/userAuth/login_screen.dart';
@@ -41,7 +42,7 @@ class _MyAppState extends State<MyApp> {
             const PasswordRegisterScreen(),
         '/confirm_account': (context) => const ConfirmAccount(),
         '/confirm_success': (context) => const ConfirmSuccess(),
-        // '/main_screen': (context) => const MainScreen(),
+        '/main_screen': (context) => const MainScreen(),
       },
     );
   }

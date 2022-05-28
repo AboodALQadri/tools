@@ -5,9 +5,10 @@ class MyColors {
   static Color kRedColor = const Color(0xffE51515);
   static Color kPurpleColor = const Color(0xff5F06A6);
   static Color kWhiteColor = const Color(0xffAEAEAE);
+  static Color kTabColor = const Color(0xff003479).withOpacity(0.7);
 }
 
-Widget ScreenStyle ({Widget? child}) {
+Widget ScreenStyle({Widget? child}) {
   return Container(
     width: double.infinity,
     height: double.infinity,
