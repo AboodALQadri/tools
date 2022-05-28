@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tools/constants/my_colors.dart';
-import 'package:tools/screens/accepted_tab.dart';
-import 'package:tools/screens/all_app_tab.dart';
-import 'package:tools/screens/under_review_tab.dart';
+import 'package:tools/screens/home_tab_bar/borrowed_tab.dart';
+import 'package:tools/screens/home_tab_bar/all_devices_tab.dart';
+import 'package:tools/screens/home_tab_bar/available_tab.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen>
           tabs: const [
             Tab(
               child: TextUtils(
-                text: 'الكل',
+                text: 'جميع الأجهزة',
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 14,
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen>
             ),
             Tab(
               child: TextUtils(
-                text: 'قيد المراجعة',
+                text: 'المتاحة',
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 14,
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen>
             ),
             Tab(
               child: TextUtils(
-                text: 'المقبولة',
+                text: 'المستعارة',
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 14,
@@ -72,10 +72,9 @@ class _HomeScreenState extends State<HomeScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          AllAppTab(),
-          UnderReviewTab(),
-          AcceptedTab(),
-
+          AllDevicesTab(),
+          AvailableTab(),
+          BorrowedTab(),
         ],
       ),
     );
