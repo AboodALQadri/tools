@@ -43,41 +43,43 @@ class ConfirmSuccess extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: Column(
-                  children: [
-                    const TextUtils(
-                      text: 'مبروك',
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22,
-                      underLine: TextDecoration.none,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextUtils(
-                      text: 'سوف يتم مراجعة طلبك خلال 24 ساعة',
-                      color: MyColors.kWhiteColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      underLine: TextDecoration.none,
-                    ),
-                    TextUtils(
-                      text: 'قم بالتفقد بعد انتهاء المدة',
-                      color: MyColors.kWhiteColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      underLine: TextDecoration.none,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedWidget(
-                      title: 'رجوع إلى الرئيسية',
-                      color: MyColors.kPrimaryColor,
-                      onPressed: () {},
-                    ),
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const TextUtils(
+                        text: 'مبروك',
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 22,
+                        underLine: TextDecoration.none,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextUtils(
+                        text: 'سوف يتم مراجعة طلبك خلال 24 ساعة',
+                        color: MyColors.kWhiteColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        underLine: TextDecoration.none,
+                      ),
+                      TextUtils(
+                        text: 'قم بالتفقد بعد انتهاء المدة',
+                        color: MyColors.kWhiteColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        underLine: TextDecoration.none,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      ElevatedWidget(
+                        title: 'رجوع إلى الرئيسية',
+                        color: MyColors.kPrimaryColor,
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],

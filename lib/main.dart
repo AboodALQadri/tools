@@ -41,6 +41,7 @@ class _MyAppState extends State<MyApp> {
             const PasswordRegisterScreen(),
         '/confirm_account': (context) => const ConfirmAccount(),
         '/confirm_success': (context) => const ConfirmSuccess(),
+        // '/main_screen': (context) => const MainScreen(),
       },
     );
   }

@@ -26,13 +26,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: MyColors.kPrimaryColor,
         body: ScreenStyle(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(MyPictures.logoName),
-        ],
-      ),
-    ));
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 250,
+                ),
+                Center(
+                  child: SvgPicture.asset(MyPictures.logoName),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }

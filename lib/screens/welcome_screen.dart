@@ -10,44 +10,49 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColors.kPrimaryColor,
       body: ScreenStyle(
         child: Padding(
           padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const SizedBox(
-                height: 60,
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 30),
-                alignment: Alignment.center,
-                child: SvgPicture.asset(MyPictures.logoName),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Column(
-                children: [
-                  ElevatedWidget(
-                    title: 'تسجيل كمستخدم',
-                    color: MyColors.kPrimaryColor,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/user_login_screen');
-                    },
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const SizedBox(
+                  height: 80,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 30),
+                  alignment: Alignment.center,
+                  child: SvgPicture.asset(MyPictures.logoName),
+                ),
+                const SizedBox(
+                  height: 200,
+                ),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ElevatedWidget(
+                        title: 'تسجيل كمستخدم',
+                        color: MyColors.kPrimaryColor,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/user_login_screen');
+                        },
+                      ),
+                      ElevatedWidget(
+                        title: 'تسجيل كمشرف',
+                        color: MyColors.kPurpleColor,
+                        borderSideColor: MyColors.kPurpleColor,
+                        onPressed: () {},
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                    ],
                   ),
-                  ElevatedWidget(
-                    title: 'تسجيل كمشرف',
-                    color: MyColors.kPurpleColor,
-                    borderSideColor: MyColors.kPurpleColor,
-                    onPressed: () {},
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

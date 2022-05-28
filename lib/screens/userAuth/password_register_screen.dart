@@ -22,6 +22,8 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
   bool _isVisibility = true;
   bool _confirmIsVisibility = true;
 
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,93 +71,119 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                     horizontal: 15,
                     vertical: 15,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: TextUtils(
-                          text: 'كلمة المرور',
-                          color: MyColors.kPrimaryColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          underLine: TextDecoration.none,
-                        ),
+                  child: Form(
+                    key: formKey,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: TextUtils(
+                              text: 'كلمة المرور',
+                              color: MyColors.kPrimaryColor,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              underLine: TextDecoration.none,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          TextFieldWidget(
+                            controller: _passwordTextController,
+                            validator: (value) {
+                              if (value.toString().length < 5) {
+                                return 'يجب أن تكون كلمة المرور أطول من 5 أحرف';
+                              } else {
+                                return null;
+                              }
+                            },
+                            obscureText: _isVisibility,
+                            hintText: 'كلمة المرور',
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _isVisibility = !_isVisibility;
+                                });
+                              },
+                              icon: _isVisibility
+                                  ? const Icon(
+                                      Icons.visibility,
+                                      color: Colors.white,
+                                    )
+                                  : const Icon(
+                                      Icons.visibility_off,
+                                      color: Colors.white,
+                                    ),
+                            ),
+                            textInputType: TextInputType.text,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: TextUtils(
+                              text: 'تأكيد كلمة المرور',
+                              color: MyColors.kPrimaryColor,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              underLine: TextDecoration.none,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          TextFieldWidget(
+                            controller: _confirmPasswordTextController,
+                            validator: (value) {
+                              if (_confirmPasswordTextController.text !=
+                                  _passwordTextController.text) {
+                                return 'كلمة المرور التأكيدية غير صحيحة';
+                              } else {
+                                return null;
+                              }
+                            },
+                            obscureText: _confirmIsVisibility,
+                            hintText: 'تأكيد كلمة المرور',
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _confirmIsVisibility = !_confirmIsVisibility;
+                                });
+                              },
+                              icon: _confirmIsVisibility
+                                  ? const Icon(
+                                      Icons.visibility,
+                                      color: Colors.white,
+                                    )
+                                  : const Icon(
+                                      Icons.visibility_off,
+                                      color: Colors.white,
+                                    ),
+                            ),
+                            textInputType: TextInputType.text,
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          ElevatedWidget(
+                            title: 'تسجيل الدخول',
+                            color: MyColors.kPrimaryColor,
+                            onPressed: () {
+                              if (formKey.currentState!.validate()) {
+                                String password = _passwordTextController.text;
+                                String confirmPassword =
+                                    _confirmPasswordTextController.text;
+                                Navigator.pushNamed(
+                                    context, '/confirm_account');
+                              }
+                            },
+                          ),
+                        ],
                       ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      TextFieldWidget(
-                        controller: _passwordTextController,
-                        obscureText: _isVisibility,
-                        hintText: 'كلمة المرور',
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _isVisibility = !_isVisibility;
-                            });
-                          },
-                          icon: _isVisibility
-                              ? const Icon(
-                                  Icons.visibility,
-                                  color: Colors.white,
-                                )
-                              : const Icon(
-                                  Icons.visibility_off,
-                                  color: Colors.white,
-                                ),
-                        ),
-                        textInputType: TextInputType.text,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: TextUtils(
-                          text: 'تأكيد كلمة المرور',
-                          color: MyColors.kPrimaryColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          underLine: TextDecoration.none,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      TextFieldWidget(
-                        controller: _confirmPasswordTextController,
-                        obscureText: _confirmIsVisibility,
-                        hintText: 'تأكيد كلمة المرور',
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _confirmIsVisibility = !_confirmIsVisibility;
-                            });
-                          },
-                          icon: _confirmIsVisibility
-                              ? const Icon(
-                                  Icons.visibility,
-                                  color: Colors.white,
-                                )
-                              : const Icon(
-                                  Icons.visibility_off,
-                                  color: Colors.white,
-                                ),
-                        ),
-                        textInputType: TextInputType.text,
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      ElevatedWidget(
-                        title: 'تسجيل الدخول',
-                        color: MyColors.kPrimaryColor,
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/confirm_account');
-                        },
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),

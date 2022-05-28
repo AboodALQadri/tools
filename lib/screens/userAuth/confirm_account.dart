@@ -67,69 +67,71 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
                         children: [
                           Align(
                             alignment: Alignment.center,
-                            child: Column(
-                              children: [
-                                const TextUtils(
-                                  text: 'تأكيد الحساب',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 22,
-                                  underLine: TextDecoration.none,
-                                ),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                TextUtils(
-                                  text: 'لقد تم إرسال رمز تأكيد إلى الايميل',
-                                  color: MyColors.kWhiteColor,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16,
-                                  underLine: TextDecoration.none,
-                                ),
-                                TextUtils(
-                                  text: 'الخاص بك',
-                                  color: MyColors.kWhiteColor,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16,
-                                  underLine: TextDecoration.none,
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                PinCodeTextField(
-                                  appContext: context,
-                                  length: 6,
-                                  cursorColor: Colors.black,
-                                  animationType: AnimationType.fade,
-                                  pinTheme: PinTheme(
-                                    shape: PinCodeFieldShape.box,
-                                    borderRadius: BorderRadius.circular(10),
-                                    fieldHeight: 45,
-                                    fieldWidth: 60,
-                                    activeFillColor: MyColors.kWhiteColor,
-                                    activeColor: MyColors.kWhiteColor,
-                                    selectedColor: MyColors.kWhiteColor,
-                                    selectedFillColor: MyColors.kWhiteColor,
-                                    inactiveFillColor: MyColors.kWhiteColor,
-                                    disabledColor: MyColors.kWhiteColor,
-                                    errorBorderColor: MyColors.kWhiteColor,
-                                    inactiveColor: MyColors.kWhiteColor,
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  const TextUtils(
+                                    text: 'تأكيد الحساب',
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 22,
+                                    underLine: TextDecoration.none,
                                   ),
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  TextUtils(
+                                    text: 'لقد تم إرسال رمز تأكيد إلى الايميل',
+                                    color: MyColors.kWhiteColor,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16,
+                                    underLine: TextDecoration.none,
+                                  ),
+                                  TextUtils(
+                                    text: 'الخاص بك',
+                                    color: MyColors.kWhiteColor,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16,
+                                    underLine: TextDecoration.none,
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  PinCodeTextField(
+                                    appContext: context,
+                                    length: 6,
+                                    cursorColor: Colors.black,
+                                    animationType: AnimationType.fade,
+                                    pinTheme: PinTheme(
+                                      shape: PinCodeFieldShape.box,
+                                      borderRadius: BorderRadius.circular(10),
+                                      fieldHeight: 45,
+                                      fieldWidth: 60,
+                                      activeFillColor: MyColors.kWhiteColor,
+                                      activeColor: MyColors.kWhiteColor,
+                                      selectedColor: MyColors.kWhiteColor,
+                                      selectedFillColor: MyColors.kWhiteColor,
+                                      inactiveFillColor: MyColors.kWhiteColor,
+                                      disabledColor: MyColors.kWhiteColor,
+                                      errorBorderColor: MyColors.kWhiteColor,
+                                      inactiveColor: MyColors.kWhiteColor,
+                                    ),
 
-                                  animationDuration:
-                                      const Duration(milliseconds: 300),
-                                  backgroundColor: Colors.transparent,
-                                  enableActiveFill: true,
-                                  // errorAnimationController: errorController,
-                                  // controller: textEditingController,
-                                  onCompleted: (v) {
-                                    print("Completed");
-                                  },
-                                  onChanged: (value) {
-                                    print(value);
-                                  },
-                                ),
-                              ],
+                                    animationDuration:
+                                        const Duration(milliseconds: 300),
+                                    backgroundColor: Colors.transparent,
+                                    enableActiveFill: true,
+                                    // errorAnimationController: errorController,
+                                    // controller: textEditingController,
+                                    onCompleted: (v) {
+                                      print("Completed");
+                                    },
+                                    onChanged: (value) {
+                                      print(value);
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           const SizedBox(

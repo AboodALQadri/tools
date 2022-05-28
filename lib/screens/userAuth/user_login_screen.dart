@@ -13,40 +13,44 @@ class UserLoginScreen extends StatelessWidget {
       body: ScreenStyle(
         child: Padding(
           padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const SizedBox(height: 100,),
-              Container(
-                margin: const EdgeInsets.only(top: 25),
-                alignment: Alignment.center,
-                child: SvgPicture.asset(MyPictures.logoName),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Column(
-                children: [
-                  ElevatedWidget(
-                    title: 'تسجيل الدخول',
-                    color: MyColors.kPrimaryColor,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login_screen');
-                    },
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const SizedBox(height: 110,),
+                Container(
+                  margin: const EdgeInsets.only(top: 25),
+                  alignment: Alignment.center,
+                  child: SvgPicture.asset(MyPictures.logoName),
+                ),
+                const SizedBox(
+                  height: 180,
+                ),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ElevatedWidget(
+                        title: 'تسجيل الدخول',
+                        color: MyColors.kPrimaryColor,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/login_screen');
+                        },
+                      ),
+                      ElevatedWidget(
+                        title: 'إنشاء حساب',
+                        color: Colors.transparent,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/register_screen');
+                        },
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                    ],
                   ),
-                  ElevatedWidget(
-                    title: 'إنشاء حساب',
-                    color: Colors.transparent,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/register_screen');
-                    },
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
