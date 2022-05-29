@@ -33,7 +33,7 @@ class _MainScreenState extends State<MainScreen> {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-          underLine: TextDecoration.none,
+
         ),
         // toolbarHeight: ,
         elevation: 0,

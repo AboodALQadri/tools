@@ -24,7 +24,7 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-          underLine: TextDecoration.none,
+
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -75,7 +75,7 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
                                     fontSize: 22,
-                                    underLine: TextDecoration.none,
+
                                   ),
                                   const SizedBox(
                                     height: 8,
@@ -85,14 +85,14 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
                                     color: MyColors.kWhiteColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 16,
-                                    underLine: TextDecoration.none,
+
                                   ),
                                   TextUtils(
                                     text: 'الخاص بك',
                                     color: MyColors.kWhiteColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 16,
-                                    underLine: TextDecoration.none,
+
                                   ),
                                   const SizedBox(
                                     height: 20,

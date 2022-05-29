@@ -26,7 +26,7 @@ class RegisterScreen extends StatelessWidget {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-          underLine: TextDecoration.none,
+
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -74,7 +74,7 @@ class RegisterScreen extends StatelessWidget {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-                              underLine: TextDecoration.none,
+
                             ),
                           ),
                           const SizedBox(
@@ -102,7 +102,7 @@ class RegisterScreen extends StatelessWidget {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-                              underLine: TextDecoration.none,
+
                             ),
                           ),
                           const SizedBox(
@@ -131,7 +131,7 @@ class RegisterScreen extends StatelessWidget {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-                              underLine: TextDecoration.none,
+
                             ),
                           ),
                           const SizedBox(

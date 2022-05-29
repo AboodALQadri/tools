@@ -18,7 +18,7 @@ class ConfirmSuccess extends StatelessWidget {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-          underLine: TextDecoration.none,
+
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -51,7 +51,7 @@ class ConfirmSuccess extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         fontSize: 22,
-                        underLine: TextDecoration.none,
+
                       ),
                       const SizedBox(
                         height: 10,
@@ -61,14 +61,14 @@ class ConfirmSuccess extends StatelessWidget {
                         color: MyColors.kWhiteColor,
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
-                        underLine: TextDecoration.none,
+
                       ),
                       TextUtils(
                         text: 'قم بالتفقد بعد انتهاء المدة',
                         color: MyColors.kWhiteColor,
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
-                        underLine: TextDecoration.none,
+
                       ),
                       const SizedBox(
                         height: 20,

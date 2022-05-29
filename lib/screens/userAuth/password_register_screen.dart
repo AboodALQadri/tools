@@ -34,7 +34,7 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-          underLine: TextDecoration.none,
+
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -84,7 +84,7 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-                              underLine: TextDecoration.none,
+
                             ),
                           ),
                           const SizedBox(
@@ -129,7 +129,7 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-                              underLine: TextDecoration.none,
+
                             ),
                           ),
                           const SizedBox(
