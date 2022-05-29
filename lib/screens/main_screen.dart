@@ -17,7 +17,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
   final List<BnItem> _bnItem = <BnItem>[
-    BnItem(title: 'الصفحة الرئيسية', widget: HomeScreen()),
+    BnItem(title: 'الصفحة الرئيسية', widget: const HomeScreen()),
     BnItem(title: 'الحجوزات', widget: const ReservationScreen()),
     BnItem(title: 'التنبيهات', widget: const NotificationScreen()),
     BnItem(title: 'الصفحة الشخصية', widget: const PersonScreen()),
@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: const Drawer(),
       appBar: AppBar(
         backgroundColor: MyColors.kPrimaryColor,
         title: TextUtils(
@@ -40,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
             visible: _currentIndex == 0 || _currentIndex == 1,
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
             ),
           ),
         ],

@@ -5,6 +5,7 @@ class MyColors {
   static Color kRedColor = const Color(0xffE51515);
   static Color kPurpleColor = const Color(0xff5F06A6);
   static Color kWhiteColor = const Color(0xffAEAEAE);
+  static Color kGreenColor = const Color(0xff06A62C);
   static Color kTabColor = const Color(0xff003479).withOpacity(0.7);
 }
 

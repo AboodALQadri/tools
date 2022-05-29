@@ -16,40 +16,38 @@ class _CategoryWidgetState extends State<CategoryWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        itemCount: 5,
-        scrollDirection: Axis.horizontal,
-        separatorBuilder: (context, index) {
-          return const SizedBox(
-            width: 10,
-          );
-        },
-        itemBuilder: (context, index) {
-          return Container(
-            height: 32,
-            width: 64,
-            decoration: BoxDecoration(
-              color: isSelected ? MyColors.kPrimaryColor : Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(
-                color: MyColors.kPrimaryColor,
-                width: 2,
-              ),
+    return ListView.separated(
+      itemCount: 5,
+      scrollDirection: Axis.horizontal,
+      separatorBuilder: (context, index) {
+        return const SizedBox(
+          width: 10,
+        );
+      },
+      itemBuilder: (context, index) {
+        return Container(
+          height: 32,
+          width: 64,
+          decoration: BoxDecoration(
+            color: isSelected ? MyColors.kPrimaryColor : Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: MyColors.kPrimaryColor,
+              width: 2,
             ),
-            child: TextButton(
-              onPressed: () {},
-              child: TextUtils(
-                text: 'لابتوبات',
-                color: isSelected ? Colors.white : MyColors.kPrimaryColor,
-                fontWeight: FontWeight.w600,
-                fontSize: 12,
-                underLine: TextDecoration.none,
-              ),
+          ),
+          child: TextButton(
+            onPressed: () {},
+            child: TextUtils(
+              text: 'لابتوبات',
+              color: isSelected ? Colors.white : MyColors.kPrimaryColor,
+              fontWeight: FontWeight.w600,
+              fontSize: 12,
+              underLine: TextDecoration.none,
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

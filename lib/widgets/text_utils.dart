@@ -14,14 +14,13 @@ class TextUtils extends StatelessWidget {
     required this.color,
     required this.fontWeight,
     required this.fontSize,
-     this.underLine,
-     this.overFlow,
+    this.underLine,
+    this.overFlow,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
-
       text,
       style: TextStyle(
         fontFamily: 'Cairo',
