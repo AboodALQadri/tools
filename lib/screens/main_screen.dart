@@ -26,6 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),
       appBar: AppBar(
         backgroundColor: MyColors.kPrimaryColor,
         title: TextUtils(
@@ -33,9 +34,16 @@ class _MainScreenState extends State<MainScreen> {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-
         ),
-        // toolbarHeight: ,
+        actions: [
+          Visibility(
+            visible: _currentIndex == 0 || _currentIndex == 1,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search),
+            ),
+          ),
+        ],
         elevation: 0,
         centerTitle: true,
       ),

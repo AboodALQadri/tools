@@ -45,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen>
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 14,
-
               ),
             ),
             Tab(
@@ -54,7 +53,6 @@ class _HomeScreenState extends State<HomeScreen>
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 14,
-
               ),
             ),
             Tab(
@@ -63,7 +61,6 @@ class _HomeScreenState extends State<HomeScreen>
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 14,
-
               ),
             ),
           ],

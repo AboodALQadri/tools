@@ -19,9 +19,9 @@ class _AllDevicesTabState extends State<AllDevicesTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 15 , right: 15 ),
-            child: const SizedBox(
+          const Padding(
+            padding: EdgeInsets.only(top: 15 , right: 15 ),
+            child: SizedBox(
               width: 70,
               height: 40,
               child: CategoryWidget(),
