@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tools/constants/my_colors.dart';
-import 'package:tools/screens/home_tab_bar/borrowed_tab.dart';
-import 'package:tools/screens/home_tab_bar/all_devices_tab.dart';
-import 'package:tools/screens/home_tab_bar/available_tab.dart';
+import 'package:tools/screens/home/home_tab_bar/all_devices_tab.dart';
+import 'package:tools/screens/home/home_tab_bar/available_tab.dart';
+import 'package:tools/screens/home/home_tab_bar/borrowed_tab.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 class HomeScreen extends StatefulWidget {
