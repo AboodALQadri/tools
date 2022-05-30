@@ -26,11 +26,11 @@ class ProductDetails extends StatelessWidget {
               width: double.infinity,
               height: 350,
               decoration: BoxDecoration(
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 0.1,
-                    spreadRadius:0.1,
-                    blurStyle: BlurStyle.inner
+                    spreadRadius: 0.1,
+                    blurStyle: BlurStyle.inner,
                   ),
                 ],
                 color: Colors.white,
@@ -94,10 +94,10 @@ class ProductDetails extends StatelessWidget {
                         height: 20,
                       ),
                       Row(
-                        children: [
+                        children: const [
                           TextUtils(
                             text: 'التفاصيل',
-                            color: MyColors.kWhiteColor,
+                            color: Colors.black54,
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
                           ),
@@ -113,8 +113,11 @@ class ProductDetails extends StatelessWidget {
                       ElevatedWidget(
                         title: 'إحجز الأن',
                         color: MyColors.kPrimaryColor,
-                        onPressed: () {},
-                      )
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/date_screen');
+                        },
+                      ),
+
                     ],
                   ),
                 ),

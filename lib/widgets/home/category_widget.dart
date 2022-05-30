@@ -12,42 +12,51 @@ class CategoryWidget extends StatefulWidget {
 }
 
 class _CategoryWidgetState extends State<CategoryWidget> {
-  bool isSelected = false;
+  int _currentSelected = 0;
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemCount: 5,
-      scrollDirection: Axis.horizontal,
-      separatorBuilder: (context, index) {
-        return const SizedBox(
-          width: 10,
-        );
-      },
-      itemBuilder: (context, index) {
-        return Container(
-          height: 32,
-          width: 64,
-          decoration: BoxDecoration(
-            color: isSelected ? MyColors.kPrimaryColor : Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(
-              color: MyColors.kPrimaryColor,
-              width: 2,
+    return SizedBox(
+      height: 40,
+      width: 70,
+      child: ListView.separated(
+        itemCount: 5,
+        scrollDirection: Axis.horizontal,
+        separatorBuilder: (context, index) {
+          return const SizedBox(
+            width: 10,
+          );
+        },
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                _currentSelected = index;
+              });
+            },
+            child: Container(
+              alignment: Alignment.center,
+              height: 35,
+              width: 65,
+              decoration: BoxDecoration(
+                color: _currentSelected == index ? MyColors.kPrimaryColor : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                  color: MyColors.kPrimaryColor,
+                  width: 2,
+                ),
+              ),
+              child: TextUtils(
+                text: 'لابتوبات',
+                color: _currentSelected == index ? Colors.white : MyColors.kPrimaryColor,
+                fontWeight: FontWeight.w600,
+                fontSize: 12,
+                underLine: TextDecoration.none,
+              ),
             ),
-          ),
-          child: TextButton(
-            onPressed: () {},
-            child: TextUtils(
-              text: 'لابتوبات',
-              color: isSelected ? Colors.white : MyColors.kPrimaryColor,
-              fontWeight: FontWeight.w600,
-              fontSize: 12,
-              underLine: TextDecoration.none,
-            ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

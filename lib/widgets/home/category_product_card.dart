@@ -9,14 +9,14 @@ class CategoryProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context,'/product_details');
+        Navigator.pushNamed(context, '/product_details');
       },
       child: Container(
         margin: const EdgeInsets.only(right: 15, left: 15, top: 5),
         width: 328,
         height: 120,
         decoration: BoxDecoration(
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.white,
               spreadRadius: 2,
@@ -77,10 +77,11 @@ class CategoryProductCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: const TextUtils(
-                  text: 'مستعارة',
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 12),
+                text: 'مستعارة',
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontSize: 12,
+              ),
             ),
           ],
         ),
