@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tools/widgets/reservation/list_tile_widget.dart';
 
 class UnderReviewTab extends StatefulWidget {
   const UnderReviewTab({Key? key}) : super(key: key);
@@ -10,6 +11,36 @@ class UnderReviewTab extends StatefulWidget {
 class _UnderReviewTabState extends State<UnderReviewTab> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            height: 500,
+            child: ListView.separated(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              itemCount: 5,
+              separatorBuilder: (context, index) {
+                return const SizedBox(
+                  height: 5,
+                );
+              },
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/order_details');
+                  },
+                  child: listTileWidget(
+                    imageUrl:
+                    'https://images.unsplash.com/photo-1653969757485-a4274d0f4930?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80',
+                    title: 'طلب الجهاز الأول',
+                    subtitle: 'تم الارسال قبل 15 ساعة',
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
