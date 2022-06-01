@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/constants/my_pictures.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 class ConfirmSuccess extends StatelessWidget {
@@ -18,7 +18,6 @@ class ConfirmSuccess extends StatelessWidget {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -51,7 +50,6 @@ class ConfirmSuccess extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         fontSize: 22,
-
                       ),
                       const SizedBox(
                         height: 10,
@@ -61,19 +59,17 @@ class ConfirmSuccess extends StatelessWidget {
                         color: MyColors.kWhiteColor,
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
-
                       ),
                       TextUtils(
                         text: 'قم بالتفقد بعد انتهاء المدة',
                         color: MyColors.kWhiteColor,
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
-
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-                      ElevatedWidget(
+                      elevatedWidget(
                         title: 'رجوع إلى الرئيسية',
                         color: MyColors.kPrimaryColor,
                         onPressed: () {},

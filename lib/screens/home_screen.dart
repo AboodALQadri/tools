@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: MyColors.kPrimaryColor,
-        elevation: 0,
+        elevation: 5,
         toolbarHeight: 20,
         bottom: TabBar(
           indicatorColor: MyColors.kTabColor,
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
+        children: const [
           AllDevicesTab(),
           AvailableTab(),
           BorrowedTab(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tools/constants/my_colors.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 class DateScreen extends StatefulWidget {
@@ -72,7 +72,7 @@ class _DateScreenState extends State<DateScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: ElevatedWidget(
+              child: elevatedWidget(
                 title: 'أكد الأن',
                 color: MyColors.kPrimaryColor,
                 onPressed: () {

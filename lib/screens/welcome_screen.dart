@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/constants/my_pictures.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -32,14 +32,14 @@ class WelcomeScreen extends StatelessWidget {
                 SingleChildScrollView(
                   child: Column(
                     children: [
-                      ElevatedWidget(
+                      elevatedWidget(
                         title: 'تسجيل كمستخدم',
                         color: MyColors.kPrimaryColor,
                         onPressed: () {
                           Navigator.pushNamed(context, '/user_login_screen');
                         },
                       ),
-                      ElevatedWidget(
+                      elevatedWidget(
                         title: 'تسجيل كمشرف',
                         color: MyColors.kPurpleColor,
                         borderSideColor: MyColors.kPurpleColor,

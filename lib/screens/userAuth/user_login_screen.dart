@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/constants/my_pictures.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
 
 class UserLoginScreen extends StatelessWidget {
   const UserLoginScreen({Key? key}) : super(key: key);
@@ -17,7 +17,9 @@ class UserLoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const SizedBox(height: 110,),
+                const SizedBox(
+                  height: 110,
+                ),
                 Container(
                   margin: const EdgeInsets.only(top: 25),
                   alignment: Alignment.center,
@@ -29,14 +31,14 @@ class UserLoginScreen extends StatelessWidget {
                 SingleChildScrollView(
                   child: Column(
                     children: [
-                      ElevatedWidget(
+                      elevatedWidget(
                         title: 'تسجيل الدخول',
                         color: MyColors.kPrimaryColor,
                         onPressed: () {
                           Navigator.pushNamed(context, '/login_screen');
                         },
                       ),
-                      ElevatedWidget(
+                      elevatedWidget(
                         title: 'إنشاء حساب',
                         color: Colors.transparent,
                         onPressed: () {

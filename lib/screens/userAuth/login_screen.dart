@@ -3,14 +3,21 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/constants/my_pictures.dart';
 import 'package:tools/constants/my_string.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
-import 'package:tools/widgets/auth/text_field_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
+import 'package:tools/widgets/text_field_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool _isVisibility = true;
   final TextEditingController _emailTextController = TextEditingController();
+
   final TextEditingController _passwordTextController = TextEditingController();
 
   final fromKey = GlobalKey<FormState>();
@@ -25,7 +32,6 @@ class LoginScreen extends StatelessWidget {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -72,17 +78,15 @@ class LoginScreen extends StatelessWidget {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-
                             ),
                           ),
                           const SizedBox(
                             height: 10,
                           ),
-                          TextFieldWidget(
+                          textFieldWidget(
                             controller: _emailTextController,
                             validator: (value) {
-                              if (!RegExp(validationEmail)
-                                  .hasMatch(value)) {
+                              if (!RegExp(validationEmail).hasMatch(value)) {
                                 return 'بريد إلكتروني خاطئ';
                               } else {
                                 return null;
@@ -101,13 +105,12 @@ class LoginScreen extends StatelessWidget {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-
                             ),
                           ),
                           const SizedBox(
                             height: 10,
                           ),
-                          TextFieldWidget(
+                          textFieldWidget(
                             controller: _passwordTextController,
                             validator: (value) {
                               if (value.toString().length < 5) {
@@ -116,35 +119,45 @@ class LoginScreen extends StatelessWidget {
                                 return null;
                               }
                             },
-                            obscureText: true,
                             hintText: 'كلمة المرور',
-                            suffixIcon: const Icon(
-                              Icons.visibility,
-                              color: Colors.white,
-                            ),
                             textInputType: TextInputType.text,
+                            obscureText: _isVisibility,
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _isVisibility = !_isVisibility;
+                                });
+                              },
+                              icon: _isVisibility
+                                  ? const Icon(
+                                      Icons.visibility,
+                                      color: Colors.white,
+                                    )
+                                  : const Icon(
+                                      Icons.visibility_off,
+                                      color: Colors.white,
+                                    ),
+                            ),
                           ),
                           const SizedBox(
                             height: 20,
                           ),
-                          ElevatedWidget(
+                          elevatedWidget(
                             title: 'تسجيل الدخول',
                             color: MyColors.kPrimaryColor,
                             onPressed: () {
                               if (fromKey.currentState!.validate()) {
-                                String email =
-                                    _emailTextController.text.trim();
-                                String password =
-                                    _passwordTextController.text;
-                                // Navigator.pushReplacementNamed(
-                                //     context, '/welcome_screen');
+                                String email = _emailTextController.text.trim();
+                                String password = _passwordTextController.text;
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/main_screen', (route) => false);
                               }
                             },
                           ),
-                          ElevatedWidget(
-                            borderSideColor: Colors.red,
+                          elevatedWidget(
                             title: 'إستخدم الجيميل',
                             color: MyColors.kRedColor,
+                            borderSideColor: Colors.red,
                             onPressed: () {},
                           ),
                         ],

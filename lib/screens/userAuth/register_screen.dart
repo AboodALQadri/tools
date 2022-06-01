@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/constants/my_pictures.dart';
 import 'package:tools/constants/my_string.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
-import 'package:tools/widgets/auth/text_field_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
+import 'package:tools/widgets/text_field_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -26,7 +26,6 @@ class RegisterScreen extends StatelessWidget {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -74,13 +73,12 @@ class RegisterScreen extends StatelessWidget {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-
                             ),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
-                          TextFieldWidget(
+                          textFieldWidget(
                             controller: _emailTextController,
                             validator: (value) {
                               if (!RegExp(validationEmail).hasMatch(value)) {
@@ -102,17 +100,17 @@ class RegisterScreen extends StatelessWidget {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-
                             ),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
-                          TextFieldWidget(
+                          textFieldWidget(
                             controller: _phoneTextController,
                             maxLength: 10,
                             validator: (value) {
-                              if (value.toString().length < 10 && !RegExp(validationPhone).hasMatch(value)) {
+                              if (value.toString().length < 10 &&
+                                  !RegExp(validationPhone).hasMatch(value)) {
                                 return 'رقم الهاتف خاطئ';
                               } else {
                                 return null;
@@ -131,13 +129,12 @@ class RegisterScreen extends StatelessWidget {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-
                             ),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
-                          TextFieldWidget(
+                          textFieldWidget(
                             controller: _nameTextController,
                             validator: (value) {
                               if (value.toString().length < 2 ||
@@ -153,7 +150,7 @@ class RegisterScreen extends StatelessWidget {
                           const SizedBox(
                             height: 20,
                           ),
-                          ElevatedWidget(
+                          elevatedWidget(
                             title: 'تسجيل الدخول',
                             color: MyColors.kPrimaryColor,
                             onPressed: () {

@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/constants/my_pictures.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 class ConfirmAccount extends StatefulWidget {
@@ -24,7 +24,6 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -75,7 +74,6 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
                                     fontSize: 22,
-
                                   ),
                                   const SizedBox(
                                     height: 8,
@@ -85,14 +83,12 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
                                     color: MyColors.kWhiteColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 16,
-
                                   ),
                                   TextUtils(
                                     text: 'الخاص بك',
                                     color: MyColors.kWhiteColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 16,
-
                                   ),
                                   const SizedBox(
                                     height: 20,
@@ -137,7 +133,7 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
                           const SizedBox(
                             height: 20,
                           ),
-                          ElevatedWidget(
+                          elevatedWidget(
                             title: 'تأكيد الحساب',
                             color: MyColors.kPrimaryColor,
                             onPressed: () {

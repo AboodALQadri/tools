@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tools/screens/home/confirm_appointment_screen.dart';
 import 'package:tools/screens/home/date_screen.dart';
 import 'package:tools/screens/main_screen.dart';
@@ -41,8 +42,7 @@ class _MyAppState extends State<MyApp> {
         '/user_login_screen': (context) => const UserLoginScreen(),
         '/login_screen': (context) => LoginScreen(),
         '/register_screen': (context) => RegisterScreen(),
-        '/password_register_screen': (context) =>
-            const PasswordRegisterScreen(),
+        '/password_register_screen': (context) => const PasswordRegisterScreen(),
         '/confirm_account': (context) => const ConfirmAccount(),
         '/confirm_success': (context) => const ConfirmSuccess(),
         '/main_screen': (context) => const MainScreen(),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/constants/my_pictures.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 class ConfirmAppointmentScreen extends StatelessWidget {
@@ -67,11 +67,12 @@ class ConfirmAppointmentScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    ElevatedWidget(
+                    elevatedWidget(
                       title: 'رجوع إلى الرئيسية',
                       color: MyColors.kPrimaryColor,
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/main_screen');
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/main_screen', (route) => false);
                       },
                     ),
                   ],

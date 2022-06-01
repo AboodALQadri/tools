@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
 
-class ImageDetails extends StatelessWidget {
-  const ImageDetails({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 350,
-      decoration: const BoxDecoration(
-        // boxShadow: [
-        //   BoxShadow(
-        //     blurRadius: 0.1,
-        //   )
-        // ],
-        color: Colors.white,
-      ),
-      child: Center(
-        child: SizedBox(
-          width: 240,
-          height: 240,
-          child: Image.network(
-            'https://images.unsplash.com/photo-1653787849876-c20bcb0880ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+Widget imageDetails({
+  required imageUrl,
+}) {
+  return Container(
+    width: double.infinity,
+    height: 300,
+    decoration: const BoxDecoration(
+      color: Colors.white,
+    ),
+    child: Center(
+      child: Container(
+        width: 360,
+        height: 240,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          image: DecorationImage(
+            image: NetworkImage(
+              imageUrl,
+            ),
+            fit: BoxFit.cover,
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
 }

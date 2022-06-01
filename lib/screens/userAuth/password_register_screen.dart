@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/constants/my_pictures.dart';
-import 'package:tools/widgets/auth/elevated_widget.dart';
-import 'package:tools/widgets/auth/text_field_widget.dart';
+import 'package:tools/widgets/elevated_widget.dart';
+import 'package:tools/widgets/text_field_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 class PasswordRegisterScreen extends StatefulWidget {
@@ -34,7 +34,6 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
-
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -84,13 +83,12 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-
                             ),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
-                          TextFieldWidget(
+                          textFieldWidget(
                             controller: _passwordTextController,
                             validator: (value) {
                               if (value.toString().length < 5) {
@@ -99,8 +97,9 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                                 return null;
                               }
                             },
-                            obscureText: _isVisibility,
                             hintText: 'كلمة المرور',
+                            textInputType: TextInputType.text,
+                            obscureText: _isVisibility,
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
@@ -117,7 +116,6 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                                       color: Colors.white,
                                     ),
                             ),
-                            textInputType: TextInputType.text,
                           ),
                           const SizedBox(
                             height: 10,
@@ -129,13 +127,12 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                               color: MyColors.kPrimaryColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
-
                             ),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
-                          TextFieldWidget(
+                          textFieldWidget(
                             controller: _confirmPasswordTextController,
                             validator: (value) {
                               if (_confirmPasswordTextController.text !=
@@ -145,8 +142,9 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                                 return null;
                               }
                             },
-                            obscureText: _confirmIsVisibility,
                             hintText: 'تأكيد كلمة المرور',
+                            textInputType: TextInputType.text,
+                            obscureText: _confirmIsVisibility,
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
@@ -163,12 +161,11 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                                       color: Colors.white,
                                     ),
                             ),
-                            textInputType: TextInputType.text,
                           ),
                           const SizedBox(
                             height: 20,
                           ),
-                          ElevatedWidget(
+                          elevatedWidget(
                             title: 'تسجيل الدخول',
                             color: MyColors.kPrimaryColor,
                             onPressed: () {
