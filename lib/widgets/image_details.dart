@@ -5,7 +5,7 @@ Widget imageDetails({
 }) {
   return Container(
     width: double.infinity,
-    height: 300,
+    height: 290,
     decoration: const BoxDecoration(
       color: Colors.white,
     ),

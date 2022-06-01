@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tools/constants/my_colors.dart';
-import 'package:tools/widgets/product_list_tile_widget.dart';
+import 'package:tools/widgets/home/product_list_tile_widget.dart';
 import 'package:tools/widgets/container_widget.dart';
 
 class AllDevicesTab extends StatefulWidget {

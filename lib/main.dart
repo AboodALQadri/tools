@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:tools/screens/home/confirm_appointment_screen.dart';
 import 'package:tools/screens/home/date_screen.dart';
 import 'package:tools/screens/main_screen.dart';
+import 'package:tools/screens/reservation/order_details.dart';
 import 'package:tools/screens/userAuth/confirm_account.dart';
 import 'package:tools/screens/userAuth/confirm_success.dart';
 import 'package:tools/screens/userAuth/login_screen.dart';
@@ -50,6 +51,8 @@ class _MyAppState extends State<MyApp> {
         '/date_screen': (context) => const DateScreen(),
         '/confirm_appointment_screen': (context) =>
             const ConfirmAppointmentScreen(),
+        '/order_details': (context) => const OrderDetails(),
+
       },
     );
   }

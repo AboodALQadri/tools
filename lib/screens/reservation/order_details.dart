@@ -3,11 +3,11 @@ import 'package:tools/constants/my_colors.dart';
 import 'package:tools/widgets/container_widget.dart';
 import 'package:tools/widgets/elevated_widget.dart';
 import 'package:tools/widgets/image_details.dart';
-import 'package:tools/widgets/home/product_info.dart';
+import 'package:tools/widgets/reservation/container_day_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
-class ProductDetails extends StatelessWidget {
-  const ProductDetails({Key? key}) : super(key: key);
+class OrderDetails extends StatelessWidget {
+  const OrderDetails({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +24,14 @@ class ProductDetails extends StatelessWidget {
           children: [
             imageDetails(
               imageUrl:
-                  'https://images.unsplash.com/photo-1653233797549-529adf530b6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                  'https://images.unsplash.com/photo-1653940355946-5e92f3c53e1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
             ),
             const SizedBox(
               height: 2,
             ),
             Container(
               width: double.infinity,
-              height: 350,
+              height: 360,
               decoration: BoxDecoration(
                 boxShadow: const [
                   BoxShadow(
@@ -60,28 +60,30 @@ class ProductDetails extends StatelessWidget {
                           Row(
                             children: [
                               containerWidget(
-                                  text: 'محجوزة',
-                                  backgroundColor: MyColors.kGreenColor,
+                                  text: 'لابتوبات',
+                                  backgroundColor: MyColors.kPrimaryColor,
                                   colorText: Colors.white,
-                                  borderColor: MyColors.kGreenColor),
+                                  borderColor: MyColors.kPrimaryColor),
                               const SizedBox(
                                 width: 15,
                               ),
                               containerWidget(
-                                text: 'لابتوبات',
-                                backgroundColor: MyColors.kPrimaryColor,
+                                text: 'متاح',
+                                backgroundColor: MyColors.kGreenColor,
                                 colorText: Colors.white,
-                                borderColor: MyColors.kPrimaryColor,
+                                borderColor: MyColors.kGreenColor,
                               ),
                             ],
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       Row(
                         children: const [
                           TextUtils(
-                            text: 'التفاصيل',
+                            text: 'اسم المسؤول',
                             color: Colors.black54,
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
@@ -91,21 +93,26 @@ class ProductDetails extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      productInfo(
-                          textInfo:
-                              'الجهاز متاح في جميع الأماكن والجامعات وهو مهم جدا جدا'),
-                      const SizedBox(height: 5),
-                      productInfo(
-                          textInfo:
-                              'الجهاز متاح في جميع الأماكن والجامعات وهو مهم جدا جدا'),
-                      const SizedBox(height: 5),
-                      productInfo(
-                          textInfo:
-                              'الجهاز متاح في جميع الأماكن والجامعات وهو مهم جدا جدا'),
-                      const SizedBox(height: 5),
-                      productInfo(
-                          textInfo:
-                              'الجهاز متاح في جميع الأماكن والجامعات وهو مهم جدا جدا'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          containerDayWidget(
+                            textDayTime: '5 أيام',
+                            borderColor: MyColors.kPrimaryColor,
+                            dayTextColor: MyColors.kPrimaryColor,
+                            timeColor: MyColors.kPrimaryColor,
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          containerDayWidget(
+                            textDayTime: '5 أيام',
+                            borderColor: MyColors.kPurpleColor,
+                            dayTextColor: MyColors.kPurpleColor,
+                            timeColor: MyColors.kPurpleColor,
+                          ),
+                        ],
+                      ),
                       const SizedBox(
                         height: 15,
                       ),
