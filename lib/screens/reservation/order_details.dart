@@ -117,10 +117,10 @@ class OrderDetails extends StatelessWidget {
                         height: 15,
                       ),
                       elevatedWidget(
-                        title: 'إحجز الأن',
+                        title: 'أرجع الأن',
                         color: MyColors.kPrimaryColor,
                         onPressed: () {
-                          Navigator.pushNamed(context, '/date_screen');
+                          Navigator.pushNamed(context, '/order_return');
                         },
                       ),
                     ],
