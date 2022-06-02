@@ -20,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
     BnItem(title: 'الصفحة الرئيسية', widget: const HomeScreen()),
     BnItem(title: 'الحجوزات', widget: const ReservationScreen()),
     BnItem(title: 'التنبيهات', widget: const NotificationScreen()),
-    BnItem(title: 'الصفحة الشخصية', widget: const PersonScreen()),
+    BnItem(title: 'الصفحة الشخصية', widget:  PersonScreen()),
   ];
 
   @override
