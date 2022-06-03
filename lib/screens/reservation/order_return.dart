@@ -60,7 +60,7 @@ class OrderReturn extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontSize: 16,
                           ),
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
                         ],
                       ),
                       Row(
@@ -85,7 +85,9 @@ class OrderReturn extends StatelessWidget {
                       elevatedWidget(
                         title: 'أرجع إلى الحجوزات',
                         color: MyColors.kPrimaryColor,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(context, '/main_screen', (route) => false);
+                        },
                       ),
                     ],
                   ),
