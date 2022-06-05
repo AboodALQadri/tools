@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
         '/splash_screen': (context) => const SplashScreen(),
         '/welcome_screen': (context) => const WelcomeScreen(),
         '/user_login_screen': (context) => const UserLoginScreen(),
-        '/login_screen': (context) => LoginScreen(),
+        '/login_screen': (context) => const LoginScreen(),
         '/register_screen': (context) => RegisterScreen(),
         '/password_register_screen': (context) =>
             const PasswordRegisterScreen(),

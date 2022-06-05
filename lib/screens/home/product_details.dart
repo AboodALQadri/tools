@@ -23,7 +23,7 @@ class ProductDetails extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             imageDetails(
               imageUrl:
                   'https://images.unsplash.com/photo-1653233797549-529adf530b6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
