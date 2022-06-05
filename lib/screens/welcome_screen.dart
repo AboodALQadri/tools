@@ -43,7 +43,9 @@ class WelcomeScreen extends StatelessWidget {
                         title: 'تسجيل كمشرف',
                         color: MyColors.kPurpleColor,
                         borderSideColor: MyColors.kPurpleColor,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/admin_splash_screen');
+                        },
                       ),
                       const SizedBox(
                         height: 50,

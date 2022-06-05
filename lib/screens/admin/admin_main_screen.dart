@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/models/bn_item.dart';
-import 'package:tools/screens/home_screen.dart';
-import 'package:tools/screens/notification_screen.dart';
-import 'package:tools/screens/person-screen.dart';
-import 'package:tools/screens/reservation_screen.dart';
+import 'package:tools/screens/admin/admin_home_screen.dart';
+import 'package:tools/screens/admin/admin_notification_screen.dart';
+import 'package:tools/screens/admin/admin_person_screen.dart';
+import 'package:tools/screens/admin/admin_reservation_screen.dart';
 import 'package:tools/widgets/text_utils.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class AdminMainScreen extends StatefulWidget {
+  const AdminMainScreen({Key? key}) : super(key: key);
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<AdminMainScreen> createState() => _AdminMainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _AdminMainScreenState extends State<AdminMainScreen> {
   int _currentIndex = 0;
   final List<BnItem> _bnItem = <BnItem>[
-    BnItem(title: 'الصفحة الرئيسية', widget: const HomeScreen()),
-    BnItem(title: 'الحجوزات', widget: const ReservationScreen()),
-    BnItem(title: 'التنبيهات', widget: const NotificationScreen()),
-    BnItem(title: 'الصفحة الشخصية', widget: PersonScreen()),
+    BnItem(title: 'الأجهزة', widget: const AdminHomeScreen()),
+    BnItem(title: 'الحجوزات', widget: const AdminReservationScreen()),
+    BnItem(title: 'التنبيهات', widget: const AdminNotificationScreen()),
+    BnItem(title: 'الصفحة الشخصية', widget:  AdminPersonScreen()),
   ];
 
   @override
@@ -28,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
-        backgroundColor: MyColors.kPrimaryColor,
+        backgroundColor: MyColors.kGreenColor,
         title: TextUtils(
           text: _bnItem[_currentIndex].title,
           color: Colors.white,
@@ -48,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
         centerTitle: true,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: MyColors.kPrimaryColor,
+        selectedItemColor: MyColors.kGreenColor,
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
         onTap: (int index) {

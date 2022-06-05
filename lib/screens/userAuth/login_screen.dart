@@ -94,6 +94,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                             hintText: 'البريد الألكتروني',
                             textInputType: TextInputType.emailAddress,
+                            colorSide: MyColors.kPrimaryColor.withOpacity(0.8),
+
                           ),
                           const SizedBox(
                             height: 10,
@@ -121,6 +123,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                             hintText: 'كلمة المرور',
                             textInputType: TextInputType.text,
+                            colorSide: MyColors.kPrimaryColor.withOpacity(0.8),
+
                             obscureText: _isVisibility,
                             suffixIcon: IconButton(
                               onPressed: () {

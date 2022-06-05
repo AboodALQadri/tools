@@ -99,6 +99,8 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                             },
                             hintText: 'كلمة المرور',
                             textInputType: TextInputType.text,
+                            colorSide: MyColors.kPrimaryColor.withOpacity(0.8),
+
                             obscureText: _isVisibility,
                             suffixIcon: IconButton(
                               onPressed: () {
@@ -144,6 +146,8 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                             },
                             hintText: 'تأكيد كلمة المرور',
                             textInputType: TextInputType.text,
+                            colorSide: MyColors.kPrimaryColor.withOpacity(0.8),
+
                             obscureText: _confirmIsVisibility,
                             suffixIcon: IconButton(
                               onPressed: () {

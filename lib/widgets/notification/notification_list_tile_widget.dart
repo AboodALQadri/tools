@@ -3,10 +3,11 @@ import 'package:tools/constants/my_colors.dart';
 import 'package:tools/widgets/text_utils.dart';
 
 Widget notificationListTileWidget({
-  required imageUrl,
   required String title,
   required String subTitle,
   required String textHours,
+  required Color iconColor,
+  required Color containerColor,
 }) {
   return Container(
     alignment: Alignment.center,
@@ -21,15 +22,14 @@ Widget notificationListTileWidget({
         width: 43.5,
         height: 40,
         decoration: BoxDecoration(
-          color: MyColors.kPrimaryColor.withOpacity(0.4),
+          color: MyColors.kWhiteColor.withOpacity(0.2),
           borderRadius: BorderRadius.circular(20),
         ),
         child: CircleAvatar(
-          child: Image.network(
-            imageUrl,
-            width: 19.58,
-            height: 20,
-            fit: BoxFit.cover,
+          backgroundColor: Colors.transparent,
+          child: Icon(
+            Icons.calendar_month,
+            color: iconColor,
           ),
         ),
       ),
@@ -51,7 +51,7 @@ Widget notificationListTileWidget({
         width: 87.01,
         height: 32,
         decoration: BoxDecoration(
-          color: MyColors.kPrimaryColor,
+          color: containerColor,
           borderRadius: BorderRadius.circular(16),
         ),
         child: TextUtils(

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tools/constants/my_colors.dart';
 import 'package:tools/widgets/notification/notification_list_tile_widget.dart';
 
-class NotificationScreen extends StatelessWidget {
-  const NotificationScreen({Key? key}) : super(key: key);
+class AdminNotificationScreen extends StatelessWidget {
+  const AdminNotificationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class NotificationScreen extends StatelessWidget {
                   title: 'التنبيه الأول',
                   subTitle: 'محتوى التنبيه',
                   textHours: 'منذ 4 ساعات',
-                  iconColor: MyColors.kPrimaryColor,
-                  containerColor: MyColors.kPrimaryColor,
+                  iconColor: MyColors.kGreenColor,
+                  containerColor: MyColors.kGreenColor,
                 );
               },
             ),

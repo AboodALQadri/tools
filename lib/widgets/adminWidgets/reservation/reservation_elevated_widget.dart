@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget elevatedWidget({
+Widget reservationElevatedWidget({
   required String title,
   required Color color,
   required Function() onPressed,
@@ -10,7 +10,7 @@ Widget elevatedWidget({
     padding: const EdgeInsets.symmetric(vertical: 10),
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
-        minimumSize: const Size(double.infinity, 48),
+        minimumSize: const Size(160, 48),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0),
           side: BorderSide(

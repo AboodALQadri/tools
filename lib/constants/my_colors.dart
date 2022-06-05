@@ -19,8 +19,27 @@ Widget ScreenStyle({Widget? child}) {
         end: Alignment.bottomLeft,
         // end: Alignment(1, 0.9),
         colors: <Color>[
-          const Color(0xff1597E5),
-          const Color(0xff000000).withOpacity(0.9),
+           MyColors.kPrimaryColor,
+           Colors.black.withOpacity(0.9),
+        ],
+      ),
+    ),
+    child: child,
+  );
+}
+
+Widget AdminScreenStyle({Widget? child}) {
+  return Container(
+    width: double.infinity,
+    height: double.infinity,
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomLeft,
+        // end: Alignment(1, 0.9),
+        colors: <Color>[
+           MyColors.kGreenColor,
+           Colors.black.withOpacity(0.9),
         ],
       ),
     ),

@@ -9,6 +9,7 @@ Widget textFieldWidget({
   Widget? suffixIcon,
   int? maxLength,
   required TextInputType textInputType,
+  required Color colorSide,
 }) {
   return TextFormField(
     style: const TextStyle(color: Colors.white),
@@ -31,31 +32,31 @@ Widget textFieldWidget({
       suffixIcon: suffixIcon,
       border: UnderlineInputBorder(
         borderSide: BorderSide(
-          color: MyColors.kPrimaryColor.withOpacity(0.8),
+          color: colorSide,
           width: 4,
         ),
       ),
       enabledBorder: UnderlineInputBorder(
         borderSide: BorderSide(
-          color: MyColors.kPrimaryColor.withOpacity(0.8),
+          color: colorSide,
           width: 4,
         ),
       ),
       disabledBorder: UnderlineInputBorder(
         borderSide: BorderSide(
-          color: MyColors.kPrimaryColor.withOpacity(0.8),
+          color: colorSide,
           width: 4,
         ),
       ),
       errorBorder: UnderlineInputBorder(
         borderSide: BorderSide(
-          color: MyColors.kPrimaryColor.withOpacity(0.8),
+          color: colorSide,
           width: 4,
         ),
       ),
       focusedBorder: UnderlineInputBorder(
         borderSide: BorderSide(
-          color: MyColors.kPrimaryColor.withOpacity(0.8),
+          color: colorSide,
           width: 4,
         ),
       ),

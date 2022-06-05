@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:tools/screens/admin/adminAuth/admin_login_screen.dart';
+import 'package:tools/screens/admin/admin_main_screen.dart';
+import 'package:tools/screens/admin/admin_splash_screen.dart';
+import 'package:tools/screens/admin/reservation/reservation_product_details.dart';
 import 'package:tools/screens/home/confirm_appointment_screen.dart';
 import 'package:tools/screens/home/date_screen.dart';
 import 'package:tools/screens/main_screen.dart';
@@ -37,14 +40,15 @@ class _MyAppState extends State<MyApp> {
         );
       },
       debugShowCheckedModeBanner: false,
-      initialRoute: '/splash_screen',
+      initialRoute: '/admin_splash_screen',
       routes: {
         '/splash_screen': (context) => const SplashScreen(),
         '/welcome_screen': (context) => const WelcomeScreen(),
         '/user_login_screen': (context) => const UserLoginScreen(),
         '/login_screen': (context) => LoginScreen(),
         '/register_screen': (context) => RegisterScreen(),
-        '/password_register_screen': (context) => const PasswordRegisterScreen(),
+        '/password_register_screen': (context) =>
+            const PasswordRegisterScreen(),
         '/confirm_account': (context) => const ConfirmAccount(),
         '/confirm_success': (context) => const ConfirmSuccess(),
         '/main_screen': (context) => const MainScreen(),
@@ -54,7 +58,12 @@ class _MyAppState extends State<MyApp> {
             const ConfirmAppointmentScreen(),
         '/order_details': (context) => const OrderDetails(),
         '/order_return': (context) => const OrderReturn(),
-
+        //
+        '/admin_splash_screen': (context) => const AdminSplashScreen(),
+        '/admin_login_screen': (context) => const AdminLoginScreen(),
+        '/admin_main_screen': (context) => const AdminMainScreen(),
+        '/reservation_product_details': (context) =>
+            const ReservationProductDetails(),
       },
     );
   }

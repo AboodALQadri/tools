@@ -7,22 +7,28 @@ import 'package:tools/widgets/elevated_widget.dart';
 import 'package:tools/widgets/text_field_widget.dart';
 import 'package:tools/widgets/text_utils.dart';
 
-class RegisterScreen extends StatelessWidget {
-  RegisterScreen({Key? key}) : super(key: key);
+class AdminLoginScreen extends StatefulWidget {
+  const AdminLoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<AdminLoginScreen> createState() => _AdminLoginScreenState();
+}
+
+class _AdminLoginScreenState extends State<AdminLoginScreen> {
   final TextEditingController _emailTextController = TextEditingController();
-  final TextEditingController _phoneTextController = TextEditingController();
-  final TextEditingController _nameTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
+
+  bool _isVisibility = true;
 
   final fromKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyColors.kPrimaryColor,
+      backgroundColor: MyColors.kGreenColor,
       appBar: AppBar(
         title: const TextUtils(
-          text: 'إنشاء حساب',
+          text: 'تسجيل الدخول',
           color: Colors.white,
           fontWeight: FontWeight.w400,
           fontSize: 22,
@@ -31,28 +37,27 @@ class RegisterScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: ScreenStyle(
+      body: AdminScreenStyle(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // const PageColor(),
               Container(
-                margin: const EdgeInsets.only(top: 25),
+                margin: const EdgeInsets.only(top: 30),
                 alignment: Alignment.center,
-                child: SvgPicture.asset(MyPictures.registerLogo),
+                child: SvgPicture.asset(MyPictures.logoName),
               ),
               const SizedBox(
-                height: 50,
+                height: 80,
               ),
               Container(
                 width: double.infinity,
-                height: 370,
+                height: 350,
                 decoration: BoxDecoration(
                   color: const Color(0xff0A0A0A).withOpacity(0.2),
                   borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(30),
-                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(40),
+                    topLeft: Radius.circular(40),
                   ),
                 ),
                 child: Padding(
@@ -66,17 +71,18 @@ class RegisterScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          const SizedBox(height: 20),
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
                             child: TextUtils(
                               text: 'البريد الألكتروني',
-                              color: MyColors.kPrimaryColor,
+                              color: MyColors.kGreenColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
                             ),
                           ),
                           const SizedBox(
-                            height: 5,
+                            height: 10,
                           ),
                           textFieldWidget(
                             controller: _emailTextController,
@@ -89,8 +95,7 @@ class RegisterScreen extends StatelessWidget {
                             },
                             hintText: 'البريد الألكتروني',
                             textInputType: TextInputType.emailAddress,
-                            colorSide: MyColors.kPrimaryColor.withOpacity(0.8),
-
+                            colorSide: MyColors.kGreenColor.withOpacity(0.8),
                           ),
                           const SizedBox(
                             height: 10,
@@ -98,75 +103,58 @@ class RegisterScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
                             child: TextUtils(
-                              text: 'رقم الهاتف',
-                              color: MyColors.kPrimaryColor,
+                              text: 'كلمة المرور',
+                              color: MyColors.kGreenColor,
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
                             ),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          textFieldWidget(
-                            controller: _phoneTextController,
-                            maxLength: 10,
-                            validator: (value) {
-                              if (value.toString().length < 10 &&
-                                  !RegExp(validationPhone).hasMatch(value)) {
-                                return 'رقم الهاتف خاطئ';
-                              } else {
-                                return null;
-                              }
-                            },
-                            hintText: 'رقم الهاتف',
-                            textInputType: TextInputType.phone,
-                            colorSide: MyColors.kPrimaryColor.withOpacity(0.8),
-
                           ),
                           const SizedBox(
                             height: 10,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: TextUtils(
-                              text: 'إسم المستخدم',
-                              color: MyColors.kPrimaryColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
                           textFieldWidget(
-                            controller: _nameTextController,
+                            controller: _passwordTextController,
                             validator: (value) {
-                              if (value.toString().length < 2 ||
-                                  !RegExp(validationName).hasMatch(value)) {
-                                return 'ادخل اسم غير مستخدم';
+                              if (value.toString().length < 5) {
+                                return 'يجب أن تكون كلمة المرور أطول من 5 أحرف';
                               } else {
                                 return null;
                               }
                             },
-                            hintText: 'إسم المستخدم',
-                            textInputType: TextInputType.emailAddress,
-                            colorSide: MyColors.kPrimaryColor.withOpacity(0.8),
-
+                            hintText: 'كلمة المرور',
+                            textInputType: TextInputType.text,
+                            colorSide: MyColors.kGreenColor.withOpacity(0.8),
+                            obscureText: _isVisibility,
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _isVisibility = !_isVisibility;
+                                });
+                              },
+                              icon: _isVisibility
+                                  ? const Icon(
+                                      Icons.visibility,
+                                      color: Colors.white,
+                                    )
+                                  : const Icon(
+                                      Icons.visibility_off,
+                                      color: Colors.white,
+                                    ),
+                            ),
                           ),
                           const SizedBox(
-                            height: 20,
+                            height: 30,
                           ),
                           elevatedWidget(
                             title: 'تسجيل الدخول',
-                            color: MyColors.kPrimaryColor,
+                            color: MyColors.kGreenColor,
+                            borderSideColor: MyColors.kGreenColor,
                             onPressed: () {
                               if (fromKey.currentState!.validate()) {
                                 String email = _emailTextController.text.trim();
-                                String phone =
-                                    _phoneTextController.text.toString();
-                                String name = _nameTextController.text.trim();
-                                Navigator.pushNamed(
-                                    context, '/password_register_screen');
+                                String password = _passwordTextController.text;
+                                Navigator.pushNamedAndRemoveUntil(context,
+                                    '/admin_main_screen', (route) => false);
                               }
                             },
                           ),
