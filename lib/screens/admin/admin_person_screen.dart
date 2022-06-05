@@ -60,7 +60,7 @@ class AdminPersonScreen extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-               SizedBox(
+               const SizedBox(
                 height: 215,
               ),
               Container(
