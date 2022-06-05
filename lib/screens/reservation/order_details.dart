@@ -13,8 +13,9 @@ class OrderDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const TextUtils(
-            text: 'الجهاز الأول',
+            text: 'جهاز محجوز',
             color: Colors.white,
             fontWeight: FontWeight.w400,
             fontSize: 22),

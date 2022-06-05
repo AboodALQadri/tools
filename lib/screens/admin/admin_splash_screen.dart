@@ -16,7 +16,7 @@ class _AdminSplashScreenState extends State<AdminSplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, '/admin_main_screen');
+      Navigator.pushReplacementNamed(context, '/admin_login_screen');
     });
   }
 

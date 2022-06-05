@@ -11,22 +11,19 @@ class OrderReturn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const TextUtils(
-            text: 'الجهاز الأول',
-            color: Colors.white,
-            fontWeight: FontWeight.w400,
-            fontSize: 22),
-      ),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(
+              height: 50,
+            ),
             imageDetails(
               imageUrl:
                   'https://images.unsplash.com/photo-1653940355946-5e92f3c53e1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
             ),
             const SizedBox(
-              height: 2,
+              height: 20,
             ),
             Container(
               width: double.infinity,
@@ -42,7 +39,8 @@ class OrderReturn extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25 , vertical: 25),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -60,7 +58,9 @@ class OrderReturn extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             fontSize: 16,
                           ),
-                          const SizedBox(height: 20,),
+                          const SizedBox(
+                            height: 20,
+                          ),
                         ],
                       ),
                       Row(
@@ -86,7 +86,8 @@ class OrderReturn extends StatelessWidget {
                         title: 'أرجع إلى الحجوزات',
                         color: MyColors.kPrimaryColor,
                         onPressed: () {
-                          Navigator.pushNamedAndRemoveUntil(context, '/main_screen', (route) => false);
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, '/main_screen', (route) => false);
                         },
                       ),
                     ],

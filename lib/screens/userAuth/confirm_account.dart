@@ -43,13 +43,13 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
                 child: SvgPicture.asset(MyPictures.confirmLogo),
               ),
               const SizedBox(
-                height: 80,
+                height: 70,
               ),
               Column(
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 350,
+                    height: 330,
                     decoration: BoxDecoration(
                       color: const Color(0xff0A0A0A).withOpacity(0.2),
                       borderRadius: const BorderRadius.only(

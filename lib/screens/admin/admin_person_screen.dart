@@ -61,11 +61,11 @@ class AdminPersonScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const SizedBox(
-                height: 220,
+                height: 215,
               ),
               Container(
                 width: double.infinity,
-                height: 370,
+                height: 374,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(30),

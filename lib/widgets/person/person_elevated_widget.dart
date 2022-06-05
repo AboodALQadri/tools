@@ -12,7 +12,7 @@ Widget personElevatedWidget({
         borderRadius: BorderRadius.circular(25),
       ),
       primary: MyColors.kRedColor.withOpacity(0.8),
-      minimumSize: const Size(300, 50),
+      minimumSize: const Size(320, 50),
     ),
     onPressed: onPressed,
     child: TextUtils(

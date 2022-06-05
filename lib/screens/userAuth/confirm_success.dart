@@ -72,7 +72,9 @@ class ConfirmSuccess extends StatelessWidget {
                       elevatedWidget(
                         title: 'رجوع إلى الرئيسية',
                         color: MyColors.kPrimaryColor,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(context, '/main_screen', (route) => false);
+                        },
                       ),
                     ],
                   ),

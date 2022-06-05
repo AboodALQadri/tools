@@ -17,7 +17,7 @@ class ReservationProductDetails extends StatelessWidget {
         backgroundColor: MyColors.kGreenColor,
         centerTitle: true,
         title: const TextUtils(
-            text: 'طلب الحجز',
+            text: 'طلب حجز',
             color: Colors.white,
             fontWeight: FontWeight.w400,
             fontSize: 22),

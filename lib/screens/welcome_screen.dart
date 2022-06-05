@@ -35,16 +35,17 @@ class WelcomeScreen extends StatelessWidget {
                       elevatedWidget(
                         title: 'تسجيل كمستخدم',
                         color: MyColors.kPrimaryColor,
+                        borderSideColor: MyColors.kPrimaryColor,
                         onPressed: () {
                           Navigator.pushNamed(context, '/user_login_screen');
                         },
                       ),
                       elevatedWidget(
                         title: 'تسجيل كمشرف',
-                        color: MyColors.kPurpleColor,
-                        borderSideColor: MyColors.kPurpleColor,
+                        color: MyColors.kGreenColor,
+                        borderSideColor: MyColors.kGreenColor,
                         onPressed: () {
-                          Navigator.pushNamed(context, '/admin_splash_screen');
+                          Navigator.pushReplacementNamed(context, '/admin_splash_screen');
                         },
                       ),
                       const SizedBox(

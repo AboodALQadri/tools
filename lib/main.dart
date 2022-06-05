@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
         );
       },
       debugShowCheckedModeBanner: false,
-      initialRoute: '/admin_splash_screen',
+      initialRoute: '/splash_screen',
       routes: {
         '/splash_screen': (context) => const SplashScreen(),
         '/welcome_screen': (context) => const WelcomeScreen(),
